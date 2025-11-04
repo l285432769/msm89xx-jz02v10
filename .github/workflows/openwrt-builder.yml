@@ -107,6 +107,12 @@ jobs:
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
 
+    - name: Add TurboACC (禁用 SFE)
+      run: |
+       cd openwrt
+       curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh
+       bash add_turboacc.sh --no-sfe
+
     - name: SSH connection to Actions
       uses: csexton/debugger-action@master
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
