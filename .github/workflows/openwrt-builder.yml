@@ -35,7 +35,7 @@ on:
 
 env:
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .config_small
+  CONFIG_FILE: .config_x40G
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: true
@@ -70,7 +70,7 @@ jobs:
       run: |
         df -hT $PWD
         if [ ${{ inputs.source }} == 'openwrt' ]; then
-          REPO_URL='https://github.com/lkiuyu/openwrt-ufi'
+          REPO_URL='https://github.com/xuxin1955/lede'
         elif [ ${{ inputs.source }} == 'immortalwrt' ]; then
           REPO_URL='https://github.com/xuxin1955/immortalwrt'
         fi
