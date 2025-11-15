@@ -69,8 +69,8 @@ jobs:
       working-directory: /workdir
       run: |
         df -hT $PWD
-        if [ ${{ inputs.source }} == 'openwrt' ]; then
-          REPO_URL='https://github.com/xuxin1955/lede'
+        if [ ${{ inputs.source }} == 'HandsomeMod' ]; then
+          REPO_URL='https://github.com/l285432769/HandsomeMod'
         elif [ ${{ inputs.source }} == 'immortalwrt' ]; then
           REPO_URL='https://github.com/xuxin1955/immortalwrt'
         fi
